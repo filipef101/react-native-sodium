@@ -350,9 +350,8 @@ RCT_EXPORT_METHOD(crypto_pwhash_scryptsalsa208sha256:(NSUInteger)keyLength passw
   unsigned char key[(unsigned long long) keyLength];
   const NSData *saltData = [[NSData alloc] initWithBase64EncodedString:salt options:0];
   const NSData *passwordData = [[NSData alloc] initWithBase64EncodedString:password options:0];
-  // TODO: Right way to cast `memLimit`?
-  if (crypto_pwhash_scryptsalsa208sha256(key, sizeof(key), [passwordData bytes], password.length, [saltData bytes], (unsigned long long) opsLimit, (u_int32_t)memLimit) != 0) {
-    // TODO: Reject
+  if (crypto_pwhash_scryptsalsa208sha256(key, sizeof(key), [passwordData bytes], passwordData.length, [saltData bytes], (unsigned long long) opsLimit, (size_t)memLimit) != 0) {
+    reject(ESODIUM,ERR_FAILURE,nil);
   } else {
     NSString *result = [[NSData dataWithBytesNoCopy:key length:sizeof(key) freeWhenDone:NO] base64EncodedStringWithOptions:0];
     resolve(result);

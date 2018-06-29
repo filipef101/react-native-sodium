@@ -10,10 +10,6 @@ elseif( ARCH_DIR STREQUAL "x86" )
   set( ARCH_DIR "i686" )
 elseif( ARCH_DIR STREQUAL "x86_64" )
   set( ARCH_DIR "westmere" )
-elseif( ARCH_DIR STREQUAL "mips" )
-  set( ARCH_DIR "mips32" )
-elseif( ARCH_DIR STREQUAL "mips64" )
-  set( ARCH_DIR "mips64r6" )
 endif()
 
 

@@ -19,7 +19,7 @@ tar -xzf $srcfile
 cd $srcdir
 
 targetPlatforms="$@"
-[ "$targetPlatforms" ] || targetPlatforms="arm mips x86 ios"
+[ "$targetPlatforms" ] || targetPlatforms="arm x86 ios"
 
 for targetPlatform in $targetPlatforms
 do
@@ -39,10 +39,6 @@ do
       dist-build/android-arm.sh
       dist-build/android-armv7-a.sh
       dist-build/android-armv8-a.sh
-      ;;
-    "mips")
-      dist-build/android-mips32.sh
-      dist-build/android-mips64.sh
       ;;
     "x86")
       dist-build/android-x86.sh

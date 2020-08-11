@@ -22,5 +22,5 @@ LLDB
 Environment variables
 
 npm install react-native-sodium@https://github.com/lyubo/react-native-sodium.git
-react-native link react-native-sodium
+cd ios && pod install
 react-native run-ios or react-native run-android

@@ -4,7 +4,7 @@
 //  Created by Lyubomir Ivanov on 9/25/16.
 //  Copyright © 2016 Lyubomir Ivanov. All rights reserved.
 //
-
+#undef SODIUM_LIBRARY_MINIMAL
 #import <Foundation/Foundation.h>
 
 @interface RCTSodium : NSObject <RCTBridgeModule>

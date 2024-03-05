@@ -5,10 +5,11 @@
 //  Created by Lyubomir Ivanov on 9/25/16.
 //  Copyright © 2016 Lyubomir Ivanov. All rights reserved.
 //
+#undef SODIUM_LIBRARY_MINIMAL
 #import "RCTBridgeModule.h"
 #import "RCTUtils.h"
 #import "sodium.h"
-
+#import "sodium/crypto_pwhash_scryptsalsa208sha256.h"
 #import "RCTSodium.h"
 
 @implementation RCTSodium
